@@ -1,0 +1,56 @@
+@import '../../../assets/styles/tools';
+
+header.header {
+
+  .marvel-logo {
+    max-height: 52px;
+  }
+
+  .navbar {
+    .navbar-menu {
+      .navbar-end {
+        > .navbar-item {
+          > .navbar-item {
+            font-weight: 500;
+            color: #5d5d5d;
+            transition: all 0.2s ease-out;
+            &:after {
+              background-color: $color-marvel;
+              content: "";
+              display: inline-block;
+              height: 2px;
+              margin: 0 auto;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              text-align: center;
+              transition: all 0.2s ease-out;
+              width: 0%;
+            }
+            &.active {
+              color: $color-marvel;
+              &:after {
+                width: 100%;
+              }
+            }
+            &.has-dropdown {
+              .navbar-link {
+                color: #5d5d5d;
+                &:hover {
+                  color: inherit;
+                }
+                &:after {
+                  border-color: $color-marvel;
+                }
+              }
+            }
+            &:hover {
+              color: $color-marvel;
+            }
+          }
+        }
+      }
+    }
+  }
+}
