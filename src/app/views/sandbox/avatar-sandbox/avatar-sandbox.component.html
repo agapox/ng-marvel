@@ -1,0 +1,17 @@
+<div
+  *ngFor="let avatarType of avatarTypes"
+  class="columns is-vcentered">
+  <div class="column has-text-centered is-12">
+    <h4 class="title is-4">{{ avatarType.name }}</h4>
+    <div class="columns is-vcentered">
+      <div
+        *ngFor="let avatarSize of avatarType.items"
+        class="column">
+
+        <div class="is-flex" style="justify-content: center;">
+          <app-avatar [withImage]="avatarType.withImage" [type]="avatarType.name.toLocaleLowerCase()" [size]="avatarSize" type="circle"></app-avatar>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

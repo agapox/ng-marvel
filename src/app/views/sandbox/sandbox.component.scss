@@ -1,0 +1,35 @@
+@import '../../../assets/styles/tools';
+
+.sandbox {
+  .section-component {
+    .title {
+      a {
+        color: $color-paragraph;
+        @include transition(color, .3s, ease-in-out);
+        .icon {
+          transform: rotate(0deg);
+          @include transition(transform, .3s, ease-in-out);
+        }
+      }
+
+    }
+    .tab {
+      height: 0;
+      overflow: hidden;
+      @include transition(height, .2s, ease-in-out);
+    }
+    &.open {
+      .title {
+        a {
+          color: $color-marvel;
+          .icon {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      .tab {
+        height: unset;
+      }
+    }
+  }
+}

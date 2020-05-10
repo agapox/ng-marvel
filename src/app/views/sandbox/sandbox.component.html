@@ -1,1 +1,36 @@
-<p>sandbox works!</p>
+<div id="sandbox" class="sandbox">
+  <section>
+    <div class="container">
+      <h1 class="title is-1">sandbox works!</h1>
+    </div>
+  </section>
+
+  <section class="section-component section-buttons" #tabItem>
+    <div class="container">
+      <h2 class="title is-2">
+        <a (click)="handleOpenTab(0)">
+          Buttons
+          <i class="icon fas fa-caret-up"></i>
+        </a>
+      </h2>
+    </div>
+    <div class="container tab">
+      <app-buttons-sandbox></app-buttons-sandbox>
+    </div>
+  </section>
+
+  <section class="section-component section-avatar" #tabItem>
+    <div class="container">
+      <h2 class="title is-2">
+        <a (click)="handleOpenTab(1)">
+          Avatar
+          <i class="icon fas fa-caret-up"></i>
+        </a>
+      </h2>
+    </div>
+    <div class="container tab">
+      <app-avatar-sandbox></app-avatar-sandbox>
+    </div>
+  </section>
+
+</div>

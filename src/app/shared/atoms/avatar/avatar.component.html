@@ -1,1 +1,21 @@
-<p>avatar works!</p>
+<div
+  [ngClass]="[size, type]"
+  class="avatar"
+  *ngIf="avatar">
+
+  <div *ngIf="avatar.img !== '' && withImage; then imgBlock else noImgBlock"></div>
+
+  <ng-template #imgBlock>
+    <div class="avatar__image">
+      <img [src]="avatar.img" [alt]="avatar.fullName">
+    </div>
+  </ng-template>
+
+  <ng-template #noImgBlock>
+    <div #noImgBlock class="avatar__info">
+      <span>{{ avatar.firstName.substring(0, 1) ? avatar.firstName.substring(0, 1) : '' }}</span>
+      <span *ngIf="avatar.lastName">{{ avatar.lastName.substring(0, 1) ? avatar.lastName.substring(0, 1) : '' }}</span>
+    </div>
+  </ng-template>
+
+</div>

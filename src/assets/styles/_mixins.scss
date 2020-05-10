@@ -1,0 +1,71 @@
+// FONT SIZE SUPPORT MIXIN
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// ANIMATION MIXINS
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+      @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+      @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+      @content;
+  }
+  @-o-keyframes #{$animation-name} {
+      @content;
+  }
+  @keyframes #{$animation-name} {
+      @content;
+  }
+}
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+// OPACITY MIXIN
+@mixin opacity ( $value: 0.5 ) {
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" $value * 100 ")";
+  filter: alpha(opacity= $value * 100 );
+  zoom: 1;
+}
+
+// BORDER RADIUS MIXIN
+@mixin border-radius ( $value: 3px ) {
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  border-radius: $value;
+  // keeps background from busting out of border
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+// BOX SHADOW MIXIN
+@mixin box-shadow($top: 0px, $left: 0, $blur: 12px, $spread: 6px, $color: rgba(0, 0, 0, .15), $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $left $top $blur $spread $color;
+    -moz-box-shadow:inset $left $top $blur $spread $color;
+    box-shadow:inset $left $top $blur $spread $color;
+  } @else {
+    -webkit-box-shadow: $left $top $blur $spread $color;
+    -moz-box-shadow: $left $top $blur $spread $color;
+    box-shadow: $left $top $blur $spread $color;
+  }
+}
+
+// TRANSITION MIXIN
+@mixin transition($property, $duration, $easing: ease-in-out) {
+	transition: $property $duration $easing;
+	-webkit-transition: $property $duration $easing;
+	-moz-transition: $property $duration $easing;
+}
+
