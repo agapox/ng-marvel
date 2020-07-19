@@ -1,0 +1,30 @@
+@import '../../../assets/styles/tools';
+
+.heroes-list {
+  flex-wrap: wrap;
+}
+
+.heroe-item {
+  @include transition(box-shadow, .2s, ease-in-out);
+  .media {
+    align-items: center;
+    .media-left {
+      margin: 0;
+      figure {
+        img {
+          cursor: pointer;
+          width: 64px;
+          height: 64px;
+          border-radius: 1px;
+          @include box-shadow();
+        }
+      }
+    }
+    .media-right {
+      flex-shrink: unset;
+      .hero__name  {
+        cursor: pointer;
+      }
+    }
+  }
+}

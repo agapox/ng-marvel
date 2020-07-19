@@ -1,1 +1,35 @@
-<p>home works!</p>
+<div class="container">
+  <section class="home__heroes">
+    <div class="columns">
+      <div class="column">
+        <app-hero-section color="" ySize="medium" classColor="primary" hasGradient="true">
+          <h2 class="title is-2 has-text-centered">Heroes</h2>
+        </app-hero-section>
+      </div>
+    </div>
+    <div *ngIf="heroes" class="columns is-multiline is-widescreen">
+      <div
+        *ngFor="let heroe of heroes; let i = index" [attr.data-index]="i"
+        class="column is-full-mobile is-half-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
+        [ngClass]="'heroes-item-' + i">
+        <div class="box heroe-item">
+          <article class="media">
+            <div class="media-left">
+              <figure class="image is-64x64">
+                <img (click)="showHeroeDetails(heroe.id)" [src]="heroe.thumbnail.path + '.' + heroe.thumbnail.extension" [alt]="heroe.name">
+              </figure>
+            </div>
+            <div class="media-right">
+              <h5 (click)="showHeroeDetails(heroe.id)" class="hero__name title is-6">{{ heroe.name }}</h5>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="columns home__heroes__pagination">
+      <div class="column">
+
+      </div>
+    </div>
+  </section>
+</div>

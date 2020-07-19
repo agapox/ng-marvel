@@ -1,0 +1,14 @@
+.hero__details {
+  .hero__info {
+    .media {
+      .media-left {
+        img {
+          max-width: 300px;
+        }
+      }
+      .media-right {
+        flex-shrink: unset;
+      }
+    }
+  }
+}
